@@ -10,7 +10,7 @@ def lambda_handler(event, context):
     nombre = "dolar_" + dt[:10] + ".csv"
     
     s3 = boto3.resource('s3')
-    bucket = s3.Bucket('dolar-raw-200205032')
+    bucket = s3.Bucket('dolar-raw-200205032-v2')
     obj = bucket.Object('archivo.txt')
     body = obj.get()['Body'].read()
     
@@ -23,7 +23,7 @@ def lambda_handler(event, context):
         date = int(int(i[0])/1000)
         s = s + str(datetime.fromtimestamp(date)) +','+str(i[1]) + '\n'
             
-    boto3.client('s3').put_object(Body=s,Bucket='dolar-final-20020503',Key=nombre)
+    boto3.client('s3').put_object(Body=s,Bucket='dolar-final-200205032-v2',Key=nombre)
     
     return {
         'statusCode': 200,

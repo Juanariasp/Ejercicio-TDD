@@ -12,7 +12,7 @@ def lambda_handler(event, context):
     with urlopen(url) as response:
         body = response.read()
     
-    boto3.client('s3').put_object(Body=body,Bucket='dolar-raw-200205032',Key="archivo.txt")
+    boto3.client('s3').put_object(Body=body,Bucket='dolar-raw-200205032-v2',Key="archivo.txt")
     
     return {
         'statusCode': 200,
