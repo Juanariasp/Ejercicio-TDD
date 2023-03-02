@@ -57,9 +57,7 @@ jobs:
       
       - name: Actualizacion Lambda
         run: |
-          pip install zappa
-          zappa init
-          zappa deploy dev
-          zappa invoke dev apps.f
+          zappa update dev
+          zappa update dev2
 
 
