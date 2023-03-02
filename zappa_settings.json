@@ -14,7 +14,7 @@
            "expression": "cron(00 15 * * ? *)" // When to execute it (in cron or rate format)
        }],
     },
-    "dev2": {
+    "devv2": {
         "app_function": "recibe.f",
         "keep_warm": false,
         "role_name": "LabRole",
